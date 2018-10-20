@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{14B012AF-234C-41CB-A523-BB608A9B0B0B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReposServiceConfigurations</RootNamespace>
+    <AssemblyName>ReposServiceConfigurations</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CommonInfo.cs" />
+    <Compile Include="Common\CreateClientId.cs" />
+    <Compile Include="Common\DefaultClientInfo.cs" />
+    <Compile Include="Common\CommonUtil.cs" />
+    <Compile Include="Extension\ServiceEditExtensions.cs" />
+    <Compile Include="ServiceConfig.cs" />
+    <Compile Include="ServiceDependencyRegister.cs" />
+    <Compile Include="Extension\ServiceExtensions.cs" />
+    <Compile Include="ServiceTypesDependencies\HandlerDepenciesRegistar.cs" />
+    <Compile Include="ServiceTypes\Attributes\NoServiceResolveAtrribute.cs" />
+    <Compile Include="ServiceTypes\Base\BaseService.cs" />
+    <Compile Include="ServiceTypes\Base\IBaseService.cs" />
+    <Compile Include="ServiceTypes\Base\CacheService.cs" />
+    <Compile Include="ServiceTypes\Base\ServiceEnums.cs" />
+    <Compile Include="ServiceTypes\Edits\DefaultServiceEntityEdit.cs" />
+    <Compile Include="ServiceTypes\Edits\DomainBaseEdits.cs" />
+    <Compile Include="ServiceTypes\Edits\DomainEdit.cs" />
+    <Compile Include="ServiceTypes\Edits\IDomainEdit.cs" />
+    <Compile Include="ServiceTypes\Edits\IServiceEntityEdit.cs" />
+    <Compile Include="ServiceTypes\Edits\ReposDomainEdit.cs" />
+    <Compile Include="ServiceTypes\Enums\EnumServiceTypes.cs" />
+    <Compile Include="ServiceTypes\Handlers\GenericReposHandler.cs" />
+    <Compile Include="ServiceTypes\Handlers\ServiceGenericHandler.cs" />
+    <Compile Include="ServiceTypes\Handlers\ServiceHandler.cs" />
+    <Compile Include="ServiceTypes\Handlers\ServiceHandlerFactory.cs" />
+    <Compile Include="ServiceTypes\Rules\DomainRules\DefaultDomainRule.cs" />
+    <Compile Include="ServiceTypes\Rules\DomainRules\DomainRule.cs" />
+    <Compile Include="ServiceTypes\Rules\IDomainRule.cs" />
+    <Compile Include="ServiceTypes\Rules\IEntityRule.cs" />
+    <Compile Include="ServiceTypes\Rules\IViewRule.cs" />
+    <Compile Include="ServiceTypes\Rules\IRule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DependencyResolver\ProjectDependResolver.csproj">
+      <Project>{189d79ab-eebe-4fa8-a10d-36a44b031d1e}</Project>
+      <Name>ProjectDependResolver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repos.DomainModel.Interface\Repos.DomainModel.Interface.csproj">
+      <Project>{6DE76C6C-E996-42C8-8079-EC379185F714}</Project>
+      <Name>Repos.DomainModel.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReposCore\ReposCore.csproj">
+      <Project>{68078827-d536-40cd-aae5-f5c7b44e2e07}</Project>
+      <Name>ReposCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReposData\ReposData.csproj">
+      <Project>{5368fe80-271f-4282-8472-a976151820eb}</Project>
+      <Name>ReposData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ReposDomain\ReposDomain.csproj">
+      <Project>{FD77DD44-D803-4EA9-83E7-010C399FC515}</Project>
+      <Name>ReposDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ServiceTypes\Rules\ViewModelRules\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
